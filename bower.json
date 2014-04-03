@@ -1,0 +1,25 @@
+{
+    "name": "AngularBoilerplate",
+    "version": "1.0.0",
+    "devDependencies": {},
+    "dependencies": {
+        "angular": "~1.2.5",
+        "angular-mocks": "~1.2.5",
+        "angular-resource": "~1.2.5",
+        "angular-i18n": "~1.2.5",
+        "angular-dynamic-locale": "~0.0.3",
+        "modernizr": "~2.7.1",
+        "angular-sanitize": "~1.2.5",
+        "bootstrap": "~3.0.3",
+        "angular-bootstrap": "~0.10.0",
+        "angular-cookies": "~1.2.5",
+        "es5-shim": "~2.1.0",
+        "font-awesome": "~4.0.3",
+        "jquery": "~2.0.3",
+        "momentjs": "~2.4.0",
+        "jsSHA": "~1.5.0",
+        "CryptoJS_v3.1.2.zip": "https://crypto-js.googlecode.com/files/CryptoJS%20v3.1.2.zip",
+        "angular-ui-router": "0.2.7",
+        "angular-loading-bar": "~0.3.0"
+    }
+}

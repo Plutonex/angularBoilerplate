@@ -7,7 +7,14 @@
      * Common Modules available to use throughout the app. This can be libraries, custom directives, services etc.
      */
     angular.module('app.common', [
-
+        'app.registry',
+        'app.session',
+        'app.storage',
+        'dialogs',
+        'app.filterModules',
+        'demoModule',
+        'app.modelService',
+        'app.smartui'
         // put all the library module dependencies here
     ])
 

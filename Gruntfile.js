@@ -451,7 +451,7 @@ module.exports = function(grunt) {
                     '<%= app_files.atpl %>',
                     '<%= app_files.ctpl %>'
                 ],
-                tasks: ['html2js']
+                tasks: ['html2js:app', 'html2js:common']
             },
 
             /**

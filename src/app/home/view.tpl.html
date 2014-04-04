@@ -1,0 +1,24 @@
+<h3>THIS IS THE HOME PAGE</h3>
+
+<div ui-view='child'></div>
+
+<s:panel resource='api' name='sample'>
+    <div class='row'>
+        <div class='col-md-8 light-grey-bg'>
+
+            <s:table>
+                <s:filter/>
+                <s:column name='firstname'>Frst Name</s:column>
+                <s:column name='lastname'>Last Name</s:column>
+            </s:table>
+        </div>
+        <div class='col-md-4'>
+            <s:form>
+                <s:input name='firstname' label='First Name' type='text' />
+                <s:input name='firstname' label='Last Name' type='text' />
+                <s:controls></s:controls>
+            </s:form>
+        </div>
+    </div>
+
+</s:panel>

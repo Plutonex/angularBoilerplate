@@ -1,0 +1,19 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-default">{{ title }}</button>
+  <button type="button" class="btn btn-default" ng-click='toggleDropdown()'>
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" ng-class='{show:dropdownShow}' ng-mouseleave='apply()'>
+    <li><a ng-click='reset()'><i class='fa fa-check' ng-show='isSelectionEmpty()'></i> None</a></li>
+    <li class="divider"></li>
+    <li ng-repeat='option in column.options'><a  ng-click='selectedItem(option)'><i class='fa fa-check' ng-show='isSelected(option)'></i> {{ option }}</a></li>
+    
+    <li class="divider"></li>
+    <li><a ng-click='apply()'>Done</a></li>
+  </ul>
+  <!-- hidden web element -->
+  <div class='hide'>
+    <select ng-model='selectedValue' ng-options='option for option in column.options' multiple></select>
+  </div>
+</div>

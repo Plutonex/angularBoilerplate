@@ -4,6 +4,7 @@
 
     angular.module('app.routes', [
         // all the app routes dependencies here
+        'app.home'
     ])
 
     .config(['$stateProvider', '$urlRouterProvider',

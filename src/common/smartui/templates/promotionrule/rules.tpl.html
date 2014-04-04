@@ -1,0 +1,85 @@
+<div class='promotionrules'>
+
+    <div class="well well-sm">
+        <button class='btn btn-default btn-sm' ng-click='addItem()' show-on-edit><i class='fa fa-plus'></i> Add Condition Rule</button>
+        <div class='pull-right form-inline'>
+            <select ng-model='prules.logic' class='form-control' ng-disabled="{{ isDisabled }}">
+                <option value="AND">ALL BELOW MUST BE TRUE</option>
+                <option value="OR">EITHER ONE MUST BE TRUE</option>
+            </select>
+        </div>
+        <div class='clearfix'></div>
+    </div>
+    <div class="panel panel-default" ng-repeat='item in prules.rules'>
+        <div class="panel-heading">
+            <div class='pull-left'>
+                Rule #{{ $index + 1}}
+            </div>
+
+            <div class='pull-right form-inline'>
+
+                <select ng-model='item.logic' class='form-control' ng-disabled="isDisabled">
+                    <option value="AND">ALL TRUE</option>
+                    <option value="OR">EITHER TRUE</option>
+                    <option value='XOR'>ONLY ONE TRUE</option>
+                </select>
+                <button ng-click='removeItem(item)' class="btn btn-danger btn-xs" ng-disabled="isDisabled"><i class='fa fa-times'></i>
+                </button>
+            </div>
+            <div class='clearfix'></div>
+        </div>
+        <div class="panel-body">
+            <div class='row'>
+
+                <table class='table table-condensed table-bordered'>
+                    <tr>
+                        <th>When</th>
+                        <th>Subject To</th>
+                        <th>Value</th>
+                        <th>
+                            <button class='btn btn-success btn-sm' ng-click='addItemRule(item)' show-on-edit><i class='fa fa-plus'></i>
+                            </button>
+                        </th>
+                    </tr>
+                    <tr ng-repeat='rule in item.rules'>
+                        <td>
+                            <select ng-model='rule.context' class='form-control' ng-disabled="isDisabled">
+                                <option value='search_date'>Search Date</option>
+                                <option value='checkin_date'>Checkin Date</option>
+                                <option value='checkout_date'>Checkout Date</option>
+                                <option value='days_before_arrival'>Days Before Arrival</option>
+                                <option value='total_pax'>Total Pax</option>
+                                <option value='num_adults'>Total Adults</option>
+                                <option value='num_children'>Total Children</option>
+                                <option value='total_nights'>Total Nights</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select ng-model='rule.operator' class='form-control' ng-disabled="isDisabled">
+                                <option value='equal_to'>Equal To</option>
+                                <option value='not_equal_to'>Not Equal To</option>
+                                <option value='less_than'>Less Than</option>
+                                <option value='less_than_or_equal_to'>Less Than Or Equal To</option>
+                                <option value='greater_than'>Greater Than</option>
+                                <option value='greater_than_or_equal_to'>Greater Than Or Equal To</option>
+                                <option value='same_as'>Same As</option>
+                                <option value='not_same_as'>Not Same As</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type='date' ng-model='rule.value' class='form-control' ng-if='rule.context === "search_date" || rule.context === "checkin_date" || rule.context === "checkout_date"' ng-disabled="isDisabled" />
+                            <input type='number' ng-model='rule.value' class='form-control' ng-if='rule.context === "days_before_arrival" || rule.context === "total_pax" || rule.context === "num_adults" || rule.context === "num_children" || rule.context === "total_nights"' ng-disabled="isDisabled" />
+                        </td>
+                        <td>
+                            <button ng-disabled="isDisabled" ng-click='removeItemRule($index, item)' class="btn btn-danger btn-xs" ng-disabled="isDisabled"><i class='fa fa-times'></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

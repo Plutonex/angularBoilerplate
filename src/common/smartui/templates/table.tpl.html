@@ -1,0 +1,41 @@
+<div class='smart-table'>
+
+    <div class="row">
+        <div class="col-md-3">
+            <button ng-click='newDraft()' class='btn btn-default'>Add New</button>
+        </div>
+        <div class="col-md-6">
+            <!-- column filters -->
+            <div class="pull-right" ng-show='filterEnabled'>
+                <div class="pull-left" ng-show='filterByColumns' ng-repeat='column in filterColumns'>
+                    <s:column-select column='column'></s:column-select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="pull-right" ng-show='filterEnabled'>
+                <div class="input-group">
+                    <input type="text" class='form-control' ng-model="filterText" />
+                    <span class="input-group-addon"><i class='fa fa-search'></i> {{ filterLabel }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class='table table-default table-hover'>
+        <thead>
+            <tr>
+                <th ng-repeat='col in columns'>
+                    <th-template content='col.content' /></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr s-row ng-repeat='row in draftItems track by row.draftId | filter: filterlist | colFilter: filterColumns' data='row' columns='columns'>
+                <tr>
+                    <tr s-row ng-repeat='row in items | filter: filterlist | colFilter: filterColumns' data='row' columns='columns'>
+                        <tr>
+
+        </tbody>
+    </table>
+    <div class='hidden' ng-transclude></div>
+</div>

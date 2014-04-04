@@ -56,8 +56,8 @@ module.exports = {
             'vendor/angular-mocks/angular-mocks.js',
             'vendor/CryptoJS_v3.1.2.zip/components/core.js',
             'vendor/CryptoJS_v3.1.2.zip/components/md5.js',
-            'vendor/bootstrap/js/collapse.js',
-            'vendor/bootstrap/js/tabs.js',
+            // 'vendor/bootstrap/js/collapse.js',
+            // 'vendor/bootstrap/js/tabs.js',
             'vendor/angular-loading-bar/src/loading-bar.js',
             'vendor/momentjs/moment.js'
         ],
